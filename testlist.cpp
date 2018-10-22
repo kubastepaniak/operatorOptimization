@@ -33,6 +33,10 @@ main ()
   PrintList (l, cout);
   list l2;
   l2.insert(7);
+  l2.insert(9);
+  l2.insert(8);
+  l2.insert(6);
+  l2.insert(17);
   l2=l;
   PrintList (l2,cout);
 }

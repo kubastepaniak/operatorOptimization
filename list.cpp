@@ -104,7 +104,8 @@ list & list::operator= (const list & l)
 {
 	if (&l == this)
 		return *this;
-	current = nullptr;
+	//current = nullptr;
+  current = NULL;
 	node *src, **dst;
 	src = l.head;
 	dst = &head;
@@ -130,5 +131,12 @@ list & list::operator= (const list & l)
 			dst = &((*dst)->next);
 		}
 	}
+
+  while(*dst)
+  {
+    node *temp = (*dst)->next;
+    delete *dst;
+    *dst = temp;
+  }
 	return *this;
 }
